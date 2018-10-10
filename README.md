@@ -17,7 +17,7 @@ profile = Profile()
 admin = Admin()  # If you use it.
 
 # You need to declare necessary configuration to initialize
-# flask-profiler as follows:
+# flask-profiling as follows:
 app.config["flask_profiling"] = {
     "enabled": True, 
     "auth":{
