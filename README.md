@@ -1,7 +1,7 @@
 # Flask-profiler
 
 
-**version: 1.7** [![Build Status](https://travis-ci.org/huangixaohen2738/flask-profiling.svg?branch=master)](https://travis-ci.org/huangxiaohen2738/flask-profiling)
+**version: 0.1** [![Build Status](https://travis-ci.org/huangxiaohen2738/flask-profiling.svg?branch=master)](https://travis-ci.org/huangxiaohen2738/flask-profiling)
 
 ##### Flask-profiling: A simple web UI for flask to profile the apis
 
@@ -18,7 +18,7 @@ admin = Admin()  # If you use it.
 
 # You need to declare necessary configuration to initialize
 # flask-profiler as follows:
-app.config["flask_profiler"] = {
+app.config["flask_profiling"] = {
     "enabled": True, 
     "auth":{
         "enabled": True,
