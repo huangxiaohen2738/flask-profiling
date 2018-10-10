@@ -1,0 +1,10 @@
+flask
+flask-admin
+flask-httpauth
+flask-Testing
+itsdangerous
+jinja2
+ldap
+markupSafe
+sqlalchemy
+werkzeug
