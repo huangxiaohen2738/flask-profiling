@@ -1,4 +1,4 @@
-# Flask-profiler
+# Flask-profiling
 
 
 **version: 0.1** [![Build Status](https://travis-ci.org/huangxiaohen2738/flask-profiling.svg?branch=master)](https://travis-ci.org/huangxiaohen2738/flask-profiling)
