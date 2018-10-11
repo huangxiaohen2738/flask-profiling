@@ -44,9 +44,9 @@ class LDAP(object):
 
     def init_app(self, app):
         config = app.config["flask_profiling"]
-        server = config.get("auth", {}).get("LDAP_SERVER")
-        port = config.get("auth", {}).get("LDAP_PORT")
-        dn = config.get("auth", {}).get("LDAP_BASE_SEARCH_DN")
+        server = config.get("auth", {}).get("ldap_server")
+        port = config.get("auth", {}).get("ldap_port")
+        dn = config.get("auth", {}).get("ldap_base_search_dn")
 
         assert server is not None
         assert port is not None

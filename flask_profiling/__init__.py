@@ -21,7 +21,8 @@ class Profile(object):
         backend.init_app(app)
         wrap_app_endpoints(app)
         app.register_blueprint(api)
-        self.setup_logger(logger)
+        if logger is None:
+            self.setup_logger()
 
         if admin is not None:
             admin.add_link(MenuLink("Profile", "/flask-profiling"))
@@ -29,8 +30,19 @@ class Profile(object):
         if config.get("type") == "ldap":
             ldap.init_app(app)
 
-    def setup_logger(self, logger):
-        pass
+    def setup_logger(self, level="INFO"):
+        import logging
+
+        formatter = logging.Formatter(
+            "%(asctime)s %(name)s [%(levelname)s] %(message)s"
+        )
+        handler = logging.StreamHandler()
+        handler.setLevel(level)
+        handler.setFormatter(formatter)
+
+        logger = logging.getLogger(__name__)
+        logger.setLevel(level)
+        logger.addHandler(handler)
 
 
 @auth.verify_password

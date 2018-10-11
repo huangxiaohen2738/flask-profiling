@@ -1,6 +1,7 @@
 version 0.2
 ====================
 - fix bugs
+- add ignore endpoints in config
 - add unit test cases
 
 version 0.1

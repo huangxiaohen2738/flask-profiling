@@ -19,13 +19,20 @@ admin = Admin()  # If you use it.
 # You need to declare necessary configuration to initialize
 # flask-profiling as follows:
 app.config["flask_profiling"] = {
-    "enabled": True, 
+    "enabled": True,  # must be true if you want to use the flask-profiling
     "auth":{
         "enabled": True,
         "type": "basic",  # ldap
         "username": "admin",  # if you choose the basic
         "password": "admin"  # if you choose the basic
-    }
+        "ldap_server": "http://dddd",  # for the ldap
+        "ldap_port": "336",
+        "ldap_base_search_dn": ou=users,dc=baidu,dc=com"
+    },
+    "ignore": [  # the api which does Not want to profile
+        "^/static/.*",
+        "/js/.*"
+    ]
 }
 # AND init profile when the ALL API were registed
 

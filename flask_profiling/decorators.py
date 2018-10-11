@@ -1,6 +1,11 @@
 import functools
+import logging
+import re
 from flask import request
 from .ext import Process, backend
+
+
+logger = logging.getLogger(__name__)
 
 
 def measure(f, name, method, context=None):
@@ -36,6 +41,20 @@ def profile_endpoint(f):
 
 
 def wrap_app_endpoints(app):
-    # TODO add ignore endpoint in config
+    config = app.config["flask_profiling"]
+    ignore = config.get("ignore", [])
+    ignore_pattern = [
+        re.compile(patten)
+        for patten in ignore
+    ]
     for endpoint, func in app.view_functions.items():
-        app.view_functions[endpoint] = profile_endpoint(func)
+        for pattern in ignore_pattern:
+            if pattern.match(endpoint):
+                break
+        else:
+            app.view_functions[endpoint] = profile_endpoint(func)
+
+    logger.info("PROFILE THE API:")
+    logger.info("-" * 15)
+    for endpoint in app.view_functions.keys():
+        logger.info(endpoint)
