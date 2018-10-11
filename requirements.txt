@@ -6,5 +6,6 @@ itsdangerous
 jinja2
 ldap
 markupSafe
+pymysql
 sqlalchemy
 werkzeug
