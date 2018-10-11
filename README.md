@@ -1,7 +1,7 @@
 # Flask-profiling
 
 
-**version: 0.1** [![Build Status](https://travis-ci.org/huangxiaohen2738/flask-profiling.svg?branch=master)](https://travis-ci.org/huangxiaohen2738/flask-profiling)
+**version: 0.2** [![Build Status](https://travis-ci.org/huangxiaohen2738/flask-profiling.svg?branch=master)](https://travis-ci.org/huangxiaohen2738/flask-profiling)
 
 ##### Flask-profiling: A simple web UI for flask to profile the apis
 

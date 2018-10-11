@@ -15,17 +15,24 @@ from setuptools import setup
 
 tests_require = [
     "Flask-Testing",
-    'simplejson'
 ]
 
 install_requires = [
-    'Flask',
-    'simplejson'
+    'flask',
+    'flask-admin',
+    'flask-httpauth',
+    'itsdangerous',
+    'jinja2',
+    'ldap',
+    'markupSafe',
+    'pymysql',
+    'sqlalchemy',
+    'werkzeug'
 ]
 
 setup(
     name='flask_profiling',
-    version='0.1',
+    version='0.2',
     url='https://github.com/huangxiaohen2738/flask-profiling',
     license=open('LICENSE').read(),
     author='huangxiaohen2738',
