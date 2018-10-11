@@ -10,7 +10,7 @@ class BasetTest(unittest.TestCase):
     def create_app(self):
         app = Flask(__name__)
         app.config["flask_profiling"] = {
-            "db_url": "mysql+pymysql://root:root@192.168.3.172/testd?charset=utf8mb4"
+            "db_url": "mysql+pymysql://root@localhost/testd?charset=utf8mb4"
         }
         profile = Profile()
 
