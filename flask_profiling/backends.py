@@ -27,8 +27,9 @@ class Backend(object):
         return sessionmaker(bind=self.db)()
 
     def to_filter(self, kwargs):
+        kwargs = kwargs if kwargs is not None else {}
         return {
-            "sort": kwargs.get("sort", "end,desc").split(","),
+            "sort": kwargs.get("sort", "endedAt,desc").split(","),
             "endedAt": float(kwargs.get("endedAt", time.time() + 0.5)),
             "startedAt": float(kwargs.get(
                 "startedAt", time.time() - 3600 * 24 * 7)),
@@ -39,7 +40,7 @@ class Backend(object):
             "kwargs": json.dumps(kwargs.get("kwargs", ())),
             "skip": int(kwargs.get("skip", 0)),
             "limit": int(kwargs.get("limit", 100))
-        } if kwargs is not None else {}
+        }
 
     def to_json(self, row):
         return {

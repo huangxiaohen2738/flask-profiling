@@ -7,4 +7,4 @@ install:
  - pip install coverage
  - pip install -r requirements.txt -i https://pypi.doubanio.com/simple
  - "if [[ $TRAVIS_PYTHON_VERSION == 2.7* ]]; then pip install pylibmc; fi"
-script: nosetests --with-coverage --cover-package=flask_profiling
+script: python setup.py test 

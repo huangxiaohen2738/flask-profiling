@@ -1,3 +1,8 @@
+version 0.2
+====================
+- fix bugs
+- add unit test cases
+
 version 0.1
 ====================
 - only sqlalchemy support
