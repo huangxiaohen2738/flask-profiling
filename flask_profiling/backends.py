@@ -158,7 +158,7 @@ class Backend(object):
                 "count": r[2],
                 "minElapsed": r[3],
                 "maxElapsed": r[4],
-                "avgElapsed": r[5]
+                "avgElapsed": float(r[5])
             } for r in rows
         ]
 

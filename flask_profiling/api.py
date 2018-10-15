@@ -17,14 +17,14 @@ def index():
 def filter_measurements():
     args = dict(request.args.items())
     measurements = backend.filter(args)
-    return jsonify({"measurements": list(measurements)})
+    return jsonify({"measurements": measurements})
 
 
 @api.route("/api/measurements/grouped")
 def get_measurements_summary():
     args = dict(request.args.items())
     measurements = backend.get_summary(args)
-    return jsonify({"measurements": list(measurements)})
+    return jsonify({"measurements": measurements})
 
 
 @api.route("/api/measurements/<measurement_id>")
