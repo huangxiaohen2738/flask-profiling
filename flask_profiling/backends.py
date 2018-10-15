@@ -3,7 +3,6 @@ import time
 from datetime import datetime
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from decimal import Decimal, ROUND_UP
 from .models import Measurements, base
 
 
@@ -65,9 +64,7 @@ class Backend(object):
         return m.to_dict()
 
     def insert(self, kwargs):
-        elapsed = Decimal(kwargs.get("elapsed", None))
-        if elapsed:
-            elapsed = elapsed.quantize(Decimal(".0001"), rounding=ROUND_UP)
+        elapsed = kwargs.get("elapsed", 0)
         kwargs["elapsed"] = elapsed
         kwargs["args"] = json.dumps(list(kwargs.get("args", ())))
         kwargs["kwargs"] = json.dumps(kwargs.get("kwargs", ()))

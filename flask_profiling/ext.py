@@ -6,7 +6,6 @@ from .models import Measurements  # NOQA
 
 
 class Process(object):
-    DECIMAL_PLACES = 6
 
     def __init__(self, name, args, kwargs, method, context=None):
         self.context = context
@@ -32,8 +31,7 @@ class Process(object):
 
     def __call__(self):
         self.end = time.time()
-        self.elapsed = round(
-            self.end - self.start, self.DECIMAL_PLACES)
+        self.elapsed = 1000 * (self.end - self.start)
         return self.to_dict()
 
 
