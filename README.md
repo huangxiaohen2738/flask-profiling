@@ -22,6 +22,7 @@ app.config["flask_profiling"] = {
     "enabled": True,  # must be true if you want to use the flask-profiling
     "auth":{
         "enabled": True,
+        "db_url": "mysql+pymysql://root:root@localhost/test",
         "type": "basic",  # ldap
         "username": "admin",  # if you choose the basic
         "password": "admin"  # if you choose the basic
