@@ -32,7 +32,7 @@ install_requires = [
 
 setup(
     name='flask_profiling',
-    version='0.3',
+    version='0.3.1',
     url='https://github.com/huangxiaohen2738/flask-profiling',
     license=open('LICENSE').read(),
     author='huangxiaohen2738',
