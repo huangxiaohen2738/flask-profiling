@@ -9,7 +9,7 @@ class BasetTest(unittest.TestCase):
 
     def create_app(self):
         app = Flask(__name__)
-        app.config["flask_profiling"] = {
+        app.config["FLASK_PROFILING"] = {
             "db_url": "mysql+pymysql://root@localhost/testd?charset=utf8mb4"
         }
         profile = Profile()

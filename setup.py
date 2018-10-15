@@ -41,7 +41,6 @@ setup(
     keywords=[
         'profiler', 'flask', 'performance'
     ],
-    long_description=open('README.md').read(),
     packages=['flask_profiling'],
     package_data={
         'flask_profiling': [
