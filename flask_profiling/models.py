@@ -1,6 +1,6 @@
 from sqlalchemy import Text
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, Numeric
+from sqlalchemy import Column, Integer
 
 
 base = declarative_base()
@@ -10,9 +10,9 @@ class Measurements(base):
     __tablename__ = 'flask_profiling_measurements'
 
     id = Column(Integer, primary_key=True)
-    startedAt = Column(Numeric)
-    endedAt = Column(Numeric)
-    elapsed = Column(Numeric)
+    startedAt = Column(Integer)
+    endedAt = Column(Integer)
+    elapsed = Column(Integer)
     method = Column(Text)
     args = Column(Text)
     kwargs = Column(Text)
