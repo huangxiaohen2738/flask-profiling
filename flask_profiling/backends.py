@@ -13,7 +13,7 @@ class Backend(object):
         self.db = None
 
     def init_app(self, app):
-        db_config = app.config["flask_profiling"].get("db_url")
+        db_config = app.config["FLASK_PROFILING"].get("db_url")
         assert db_config is not None, "db_url is None"
         self.db = create_engine(db_config)
         self.create_database()

@@ -41,7 +41,7 @@ def profile_endpoint(f):
 
 
 def wrap_app_endpoints(app):
-    config = app.config["flask_profiling"]
+    config = app.config["FLASK_PROFILING"]
     ignore = config.get("ignore", [])
     ignore_pattern = [
         re.compile(patten)

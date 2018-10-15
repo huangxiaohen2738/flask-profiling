@@ -18,7 +18,8 @@ admin = Admin()  # If you use it.
 
 # You need to declare necessary configuration to initialize
 # flask-profiling as follows:
-app.config["flask_profiling"] = {
+app.config["FLASK_PROFILING"] = {
+    "db_url": "mysql+pymysql://...",
     "enabled": True,  # must be true if you want to use the flask-profiling
     "auth":{
         "enabled": True,
