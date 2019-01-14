@@ -26,7 +26,7 @@ app.config["FLASK_PROFILING"] = {
         "db_url": "mysql+pymysql://root:root@localhost/test",
         "type": "basic",  # ldap
         "username": "admin",  # if you choose the basic
-        "password": "admin"  # if you choose the basic
+        "password": "admin",  # if you choose the basic
         "ldap_server": "http://dddd",  # for the ldap
         "ldap_port": "336",
         "ldap_base_search_dn": ou=users,dc=baidu,dc=com"
